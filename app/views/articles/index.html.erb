@@ -2,19 +2,32 @@
  
 <%= link_to 'New article', new_article_path %>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-  </tr>
+<div class="container brown">
+  <div class="three columns">
+    <h3>Title</h3>
+  </div>
+  <div class="ten columns">
+    <h3>Text</h3>
+  </div>
+  <div class="three columns">
+    <h3>Buttons</h3>
+  </div>
  
   <% @articles.each do |article| %>
-    <tr>
-      <td><%= article.title %></td>
-      <td><%= article.text %></td>
-      <td><%= link_to 'Show', article_path(article) %></td>
-      <td><%= link_to 'Edit', edit_article_path(article) %></td>
-      <td><%= link_to 'Destroy', article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
+    <div class="three columns">
+      <%= article.title %>
+    </div>
+    <div class="ten columns">
+      <%= article.text %>
+    </div>
+    <div class="one column">
+      <%= link_to 'Show', article_path(article) %>
+    </div>
+    <div class="one column">
+      <%= link_to 'Edit', edit_article_path(article) %>
+    </div>
+    <div class="one column">
+      <%= link_to 'Destroy', article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
   <% end %>
-</table>
+</div>

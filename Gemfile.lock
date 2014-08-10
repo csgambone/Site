@@ -1,3 +1,8 @@
+PATH
+  remote: ./vendor/skeleton-rails
+  specs:
+    skeleton-rails (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -119,6 +124,7 @@ DEPENDENCIES
   rails (= 4.1.4)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
+  skeleton-rails!
   spring
   sqlite3
   turbolinks

@@ -12,21 +12,60 @@
  *
  *= require_tree .
  *= require_self
+ *= require base
+ *= require layout
+ *= require skeleton
  */
 
-body {background-image:url('link.jpg');
-      background-size:cover;
+body {
+	  color:white;
+	  background-image:url('link.jpg');
+   	  background-size:cover;
   	  background-repeat:no-repeat;
-  	  background-color:black;}
+  	  background-color:black;
+}
 
 h1 {
-    color: #ffffff;
+    color: #FFFFFF;
+    text-align:center;
+    font-weight:bold;
 }
 
 h2 {
-    color: #ffffff;
+    color: #FFFFFF;
 }
 
 h3 {
-    color: #ffffff;
+    color: #FFFFFF;
+}
+
+.brown {
+	background-color:rgba(105,81,27,0.7);
+}
+
+.menu_margin {
+	margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+/* unvisited link */
+a:link {
+    color: #00DD00;
+}
+
+/* visited link */
+a:visited {
+    color: #00FF00;
+}
+
+/* mouse over link */
+a:hover {
+    color: #CCFFCC;
+}
+
+/* selected link */
+a:active {
+    color: #00BB00;
 }
