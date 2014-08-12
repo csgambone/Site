@@ -1,17 +1,20 @@
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
- 
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
+<div class="container brown menu_margin">
+	<div class="menu_margin">
+		<div class="center">
+		  <h2><%= @article.title %></h2>
+		</div>
+		 
+		<p>
+		  <%= @article.text %>
+		</p>
 
-<h2>Comments</h2>
-<%= render @article.comments %>
+		<hr>
+		<%= link_to 'Edit', edit_article_path(@article), :class=>"button" %>
 
-<h2>Add a comment:</h2>
-<%= render "comments/form" %>
+		<h3>Comments</h3>
+		<%= render @article.comments %>
 
-<%= link_to 'Back', articles_path %> | <%= link_to 'Edit', edit_article_path(@article) %>
+		<h3>Add a comment:</h3>
+		<%= render "comments/form" %>
+	</div>
+</div>

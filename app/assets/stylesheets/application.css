@@ -39,6 +39,18 @@ h3 {
     color: #FFFFFF;
 }
 
+h4 {
+    color: #FFFFFF;
+}
+
+h5 {
+    color: #FFFFFF;
+}
+
+.center {
+	text-align: center;
+}
+
 .brown {
 	background-color:rgba(105,81,27,0.7);
 }
@@ -50,22 +62,3 @@ h3 {
     margin-left: 10px;
 }
 
-/* unvisited link */
-a:link {
-    color: #00DD00;
-}
-
-/* visited link */
-a:visited {
-    color: #00FF00;
-}
-
-/* mouse over link */
-a:hover {
-    color: #CCFFCC;
-}
-
-/* selected link */
-a:active {
-    color: #00BB00;
-}
