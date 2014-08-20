@@ -1,0 +1,68 @@
+<%= form_for @question do |f| %>
+  <% if @question.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
+      <ul>
+        <% @question.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="container class">
+  <div class="eight columns offset-by-four">
+  <p>
+    <h5> Question </h5>
+    <%= f.text_area :body, :class => "form_text" %>
+  </p>
+ 
+  <p>
+    <h5> Answer </h5>
+    <%= f.text_field :answer, :size => 800 %>
+  </p>
+
+  <p>
+    <h5> Question Type </h5>
+    <%= f.collection_select :type, Type.all, :id, :name %> 
+  </p>
+
+  <p>
+    <% Source.all.each do |source| %>
+      <%= f.check_box(:sources, { :multiple => true }, source) %>
+      <%= source.name %>&nbsp;&nbsp;
+    <% end %>
+  </p>
+
+  <p>
+    <h5> A </h5>
+    <%= f.text_field :option1, :class => "form_text" %>
+  </p>
+
+  <p>
+    <h5> B </h5>
+    <%= f.text_field :option2, :class => "form_text" %>
+  </p>
+
+  <p>
+    <h5> C </h5> 
+    <%= f.text_field :option3, :class => "form_text" %>
+  </p>
+
+  <p>
+    <h5> D </h5>
+    <%= f.text_field :option4, :class => "form_text" %>
+  </p>
+
+  <p>
+    <h5> E </h5>
+    <%= f.text_field :option5, :class => "form_text" %>
+  </p>
+
+
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+  </div>
+  </div>
+<% end %>
