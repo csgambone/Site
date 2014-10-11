@@ -1,6 +1,6 @@
 class Question < ActiveRecord::Base
-	has_many :sources
-	has_one :type
+	has_and_belongs_to_many :sources
+	belongs_to :type
 	validates :body, presence: true
     validates :answer, presence: true
     validates :type, presence: true

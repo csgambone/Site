@@ -8,7 +8,9 @@ class QuestionsController < ApplicationController
 
 	def create
 		@question = Question.new(question_params)
- 
+ 		@question.type_id = params[:question][:type_id]
+ 		@question.source_ids = params[:question][:source_ids]
+
   		if @question.save
     		redirect_to @question
   		else
@@ -30,7 +32,7 @@ class QuestionsController < ApplicationController
 
 	def update
   		@question = Question.find(params[:id])
- 
+ 		@question.sources.delete_all
   		if @question.update(question_params)
     		redirect_to @question
   		else
@@ -46,7 +48,7 @@ class QuestionsController < ApplicationController
 
   	private
   		def question_params
-    		params.require(:question).permit(:body, :answer, :type)
+    		params.require(:question).permit(:body, :answer, :option1, :option2, :option3, :option4, :option5, :type_id, {:source_ids => []})
   		end
 
 end

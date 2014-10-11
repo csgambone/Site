@@ -1,0 +1,32 @@
+<div class="container brown menu_margin">
+	<div class="menu_margin">
+		<div class="center">
+			<h2>Question ID: <%= @question.id %></h2>
+		</div>
+		 
+		<p>
+			Body: <%= @question.body %>
+		</p>
+
+		<p>
+			Answer: <%=@question.answer %> <br/>
+			Option 1: <%=@question.option1 %> <br/>
+			Option 2: <%=@question.option2 %> <br/>
+			Option 3: <%=@question.option3 %> <br/>
+			Option 4: <%=@question.option4 %> <br/>
+			Option 5: <%=@question.option5 %> <br/>
+			Type: <%=@question.type.name %>
+		</p>
+
+		<p>
+			Sources:
+			<% @question.sources.each do |source| %>
+				<%= source.name %> /
+			<% end %>
+		</p>
+
+		<hr>
+		<%= link_to 'Edit', edit_question_path(@question), :class=>"button" %>
+
+	</div>
+</div>

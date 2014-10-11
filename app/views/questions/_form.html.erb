@@ -23,12 +23,12 @@
 
   <p>
     <h5> Question Type </h5>
-    <%= f.collection_select :type, Type.all, :id, :name %> 
+    <%= f.collection_select :type_id, Type.all, :id, :name %> 
   </p>
 
   <p>
     <% Source.all.each do |source| %>
-      <%= f.check_box(:sources, { :multiple => true }, source) %>
+      <%= check_box_tag "question[source_ids][]", source.id, @question.sources.include?(source) %>
       <%= source.name %>&nbsp;&nbsp;
     <% end %>
   </p>

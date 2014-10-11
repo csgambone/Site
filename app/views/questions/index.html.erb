@@ -3,25 +3,13 @@
   <%= link_to 'New Question', new_question_path, :class=>"button one column" %>
 </div>
 <div class="container brown">
-  <div class="sixteen columns">
-    <div class="three columns">
-      <h3>Title</h3>
-    </div>
-    <div class="nine columns">
-      <h3>Text</h3>
-    </div>
-    <div class="three columns">
-      <h3>Buttons</h3>
-    </div>
-  </div>
- 
   <% @questions.each do |question| %>
     <div class="sixteen columns">
       <div class="three columns">
-        <%= question.body %>
+        Question: <%= question.body %>
       </div>
       <div class="nine columns">
-        <%= question.answer %>
+        Answer: <%= question.answer %>
       </div>
       <div class="one column">
         <%= link_to 'Show', question_path(question), :class=>"button" %>
@@ -35,21 +23,22 @@
     </div>
     <div class="sixteen columns">
       <div class="three columns">
-        <%= question.option1 %>
+        Option 1: <%= question.option1 %>
       </div>
       <div class="three columns">
-        <%= question.option2 %>
+        Option 2: <%= question.option2 %>
       </div>
       <div class="three columns">
-        <%= question.option3 %>
+        Option 3: <%= question.option3 %>
       </div>
       <div class="three columns">
-        <%= question.option4 %>
+        Option 4: <%= question.option4 %>
       </div>
       <div class="three columns">
-        <%= question.option5 %>
+        Option 5: <%= question.option5 %>
       </div>
     </div>
+    <hr/>
     &nbsp;
   <% end %>
 </div>
