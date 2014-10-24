@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   end
 
   resources :questions
+
+  get '/multiplechoice' => 'pages#multiplechoice'
   
   root 'welcome#index'
 end

@@ -51,17 +51,33 @@ h5 {
 	text-align: center;
 }
 
+.right {
+  text-align: right;
+}
+
 .brown {
 	background-color:rgba(105,81,27,0.7);
 }
 
 .menu_margin {
 	margin-top: 10px;
-    margin-bottom: 10px;
-    margin-right: 10px;
-    margin-left: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .form_text {
 	width:100%;
+}
+
+input {
+  float: left;
+  overflow: hidden;
+}
+
+label {
+  float: left;
+  overflow: hidden;
+  margin-left: 1%;
+  width: 96%;
 }
