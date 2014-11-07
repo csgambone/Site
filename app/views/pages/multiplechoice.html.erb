@@ -16,15 +16,15 @@
 				</div>
 				<div>
 					
-					<%= radio_button_tag(:answer, "A") %><%= label("A", @question.option1) %>
+					<%= radio_button_tag(:answer, "A") %><%= @question.option1 %><br />
 					
-					<%= radio_button_tag(:answer, "B") %><%= label("B", @question.option2) %>
+					<%= radio_button_tag(:answer, "B") %><%= @question.option2 %><br />
 					
-					<%= radio_button_tag(:answer, "C") %><%= label("C", @question.option3) %>
+					<%= radio_button_tag(:answer, "C") %><%= @question.option3 %><br />
 					
-					<%= radio_button_tag(:answer, "D") %><%= label("D", @question.option4) %>
+					<%= radio_button_tag(:answer, "D") %><%= @question.option4 %><br />
 					
-					<%= radio_button_tag(:answer, "E") %><%= label("E", @question.option5) %>
+					<%= radio_button_tag(:answer, "E") %><%= @question.option5 %>
 					<div style="clear: left;"></div>
 				</div>
 			</div>

@@ -16,9 +16,9 @@ class QuestionsController < ApplicationController
   		else
     		render 'new'
 		end
-  	end
+  end
 
-  	def show
+  def show
   		@question = Question.find(params[:id])
 	end
 
@@ -46,9 +46,9 @@ class QuestionsController < ApplicationController
   		redirect_to questions_path
 	end
 
-  	private
-  		def question_params
-    		params.require(:question).permit(:body, :answer, :option1, :option2, :option3, :option4, :option5, :type_id, {:source_ids => []})
-  		end
+	private
+		def question_params
+  		params.require(:question).permit(:body, :answer, :option1, :option2, :option3, :option4, :option5, :type_id, {:source_ids => []})
+		end
 
 end

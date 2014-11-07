@@ -10,59 +10,59 @@
     </div>
   <% end %>
   <div class="container class">
-  <div class="eight columns offset-by-four">
-  <p>
-    <h5> Question </h5>
-    <%= f.text_area :body, :class => "form_text" %>
-  </p>
- 
-  <p>
-    <h5> Answer </h5>
-    <%= f.text_field :answer, :size => 800 %>
-  </p>
+    <div class="eight columns offset-by-four">
+      <p>
+        <h5> Question </h5>
+        <%= f.text_area :body, :class => "form_text" %>
+      </p>
+     
+      <p>
+        <h5> Answer </h5>
+        <%= f.text_field :answer, :size => 800 %>
+      </p>
 
-  <p>
-    <h5> Question Type </h5>
-    <%= f.collection_select :type_id, Type.all, :id, :name %> 
-  </p>
+      <p>
+        <h5> Question Type </h5>
+        <%= f.collection_select :type_id, Type.all, :id, :name %> 
+      </p>
 
-  <p>
-    <% Source.all.each do |source| %>
-      <%= check_box_tag "question[source_ids][]", source.id, @question.sources.include?(source) %>
-      <%= source.name %>&nbsp;&nbsp;
-    <% end %>
-  </p>
+      <p>
+        <% Source.all.each do |source| %>
+          <%= check_box_tag "question[source_ids][]", source.id, @question.sources.include?(source) %>
+          <%= source.name %>&nbsp;&nbsp;
+        <% end %>
+      </p>
 
-  <p>
-    <h5> A </h5>
-    <%= f.text_field :option1, :class => "form_text" %>
-  </p>
+      <p>
+        <h5> A </h5>
+        <%= f.text_field :option1, :class => "form_text" %>
+      </p>
 
-  <p>
-    <h5> B </h5>
-    <%= f.text_field :option2, :class => "form_text" %>
-  </p>
+      <p>
+        <h5> B </h5>
+        <%= f.text_field :option2, :class => "form_text" %>
+      </p>
 
-  <p>
-    <h5> C </h5> 
-    <%= f.text_field :option3, :class => "form_text" %>
-  </p>
+      <p>
+        <h5> C </h5> 
+        <%= f.text_field :option3, :class => "form_text" %>
+      </p>
 
-  <p>
-    <h5> D </h5>
-    <%= f.text_field :option4, :class => "form_text" %>
-  </p>
+      <p>
+        <h5> D </h5>
+        <%= f.text_field :option4, :class => "form_text" %>
+      </p>
 
-  <p>
-    <h5> E </h5>
-    <%= f.text_field :option5, :class => "form_text" %>
-  </p>
+      <p>
+        <h5> E </h5>
+        <%= f.text_field :option5, :class => "form_text" %>
+      </p>
 
 
- 
-  <p>
-    <%= f.submit %>
-  </p>
-  </div>
+     
+      <p>
+        <%= f.submit %>
+      </p>
+    </div>
   </div>
 <% end %>

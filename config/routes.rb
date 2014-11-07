@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   resources :questions
 
+  resources :games
+
   get '/multiplechoice' => 'pages#multiplechoice'
   
   root 'welcome#index'

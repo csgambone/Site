@@ -1,0 +1,31 @@
+<div class="container brown menu_margin">
+	<div class="menu_margin">
+		<div class="center">
+			<h2>Game ID: <%= @game.id %></h2>
+		</div>
+		 
+		<p>
+			Question Count: <%= @game.question_count %>
+		</p>
+
+		<p>
+			Types:
+			<% @game.types.each do |type| %>
+				<%= type.name %> /
+			<% end %>
+		</p>
+
+		<p>
+			Sources:
+			<% @game.sources.each do |source| %>
+				<%= source.name %> /
+			<% end %>
+		</p>
+
+		<hr>
+
+		<% @question = Question.offset(rand(Question.count)).first %>
+		<%= render 'questions/show' %>
+
+	</div>
+</div>
