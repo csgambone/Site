@@ -39,3 +39,5 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'skeleton-rails', :path => './vendor/skeleton-rails'
+
+gem 'yaml_db'
