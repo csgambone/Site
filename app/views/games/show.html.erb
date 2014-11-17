@@ -24,8 +24,13 @@
 
 		<hr>
 
-		<% @question = Question.offset(rand(Question.count)).first %>
-		<%= render 'questions/show' %>
+		<% @questionArray = @game.GetQuestionSet.to_a() %>
+		<% if @questionArray != [] %>
+			<% @question = @questionArray.sample %>
+			<%= render 'questions/show' %>
+		<% else %>
+			Not enough questions in the database meet this game's criteria.
+		<% end %>
 
 	</div>
 </div>
