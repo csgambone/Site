@@ -1,0 +1,56 @@
+<%= form_for(@catch_rate) do |f| %>
+  <% if @catch_rate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@catch_rate.errors.count, "error") %> prohibited this catch_rate from being saved:</h2>
+
+      <ul>
+      <% @catch_rate.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="container class">
+    <div class="eight columns offset-by-four">
+      <p>
+        <h5> Catch Rate </h5>
+        <%= f.number_field :catchrate, :size => 800 %>
+      </p>
+
+      <p>
+        <h5> Current HP </h5>
+        <%= f.number_field :currenthp, :size => 800 %>
+      </p>
+
+      <p>
+        <h5> Maximum HP </h5>
+        <%= f.number_field :maxhp, :size => 800 %>
+      </p>
+
+      <p>
+        <h5> Status Multiplier </h5>
+        <%= f.number_field :status, :size => 800 %>
+      </p>
+
+      <p>
+        <h5> Ball Multiplier </h5>
+        <%= f.number_field :ball, :size => 800 %>
+      </p>
+
+      <p>
+        <h5> O-Power Multiplier </h5>
+        <%= f.number_field :opower, :size => 800 %>
+      </p>
+
+       <p>
+        <h5> Number of Pokemon caught in Pokedex </h5>
+        <%= f.number_field :caught, :size => 800 %>
+      </p>
+
+      <p>
+        <%= f.submit %>
+      </p>
+    </div>
+  </div>
+<% end %>

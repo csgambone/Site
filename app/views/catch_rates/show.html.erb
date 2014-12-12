@@ -1,0 +1,34 @@
+<div class="container brown menu_margin">
+	<div class="menu_margin">
+		<div class="center">
+			<h2>Catch Rate ID: <%= @catch_rate.id %></h2>
+		</div>
+		 
+		<p>
+			Catch Rate: <%= @catch_rate.catchrate %>
+		</p>
+		<p>
+			Current HP: <%= @catch_rate.currenthp %>
+		</p>
+		<p>
+			Maximum HP: <%= @catch_rate.maxhp %>
+		</p>
+		<p>
+			Status Multiplier: <%= @catch_rate.status %>
+		</p>
+		<p>
+			Ball Multiplier: <%= @catch_rate.ball %>
+		</p>
+		<p>
+			O-Power Multiplier: <%= @catch_rate.opower %>
+		</p>
+		<p>
+			Number of Pokemon caught in Pokedex: <%= @catch_rate.caught %>
+		</p>
+
+		<p>
+			Sum: <%= @catch_rate.Calculate %>
+		</p>
+
+	</div>
+</div>
