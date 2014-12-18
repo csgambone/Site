@@ -70,6 +70,6 @@ class CatchRatesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def catch_rate_params
       #params[:catch_rate]
-      params.require(:catch_rate).permit(:id, :catchrate, :currenthp, :maxhp, :status, :ball, :opower, :caught)
+      params.require(:catch_rate).permit(:id, :catchrate, :currenthp, :maxhp, :status, :ball, :opower, :caught, :repeat, :turn_number, :enemy_level, :bug_water_type, :dive_surf_fish, :cave_night)
     end
 end

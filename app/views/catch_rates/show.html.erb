@@ -14,20 +14,64 @@
 			Maximum HP: <%= @catch_rate.maxhp %>
 		</p>
 		<p>
-			Status Multiplier: <%= @catch_rate.status %>
+			Status: <%= @catch_rate.GetStatusName(@catch_rate.status) %>
 		</p>
 		<p>
-			Ball Multiplier: <%= @catch_rate.ball %>
+			Ball: <%= @catch_rate.GetBallName(@catch_rate.ball) %>
 		</p>
 		<p>
-			O-Power Multiplier: <%= @catch_rate.opower %>
+			O-Power Multiplier: <%= @catch_rate.GetOPowerName(@catch_rate.opower) %>
 		</p>
 		<p>
 			Number of Pokemon caught in Pokedex: <%= @catch_rate.caught %>
 		</p>
 
 		<p>
-			Sum: <%= @catch_rate.Calculate %>
+			Turn Number: <%= @catch_rate.turn_number %>
+		</p>
+
+		<p>
+			Enemy Level: <%= @catch_rate.enemy_level %>
+		</p>
+
+		<p>
+			Is already caught in Pokedex: <%= @catch_rate.repeat %>
+		</p>
+
+		<p>
+			Is bug and/or water type: <%= @catch_rate.bug_water_type %>
+		</p>
+
+		<p>
+			Currently diving, surfing, or fishing: <%= @catch_rate.dive_surf_fish %>
+		</p>
+
+		<p>
+			Currently in a cave and/or night time: <%= @catch_rate.cave_night %>
+		</p>
+
+		<p>
+			Modified Catch Rate: <%= @catch_rate.GetModifiedCatchRate %>
+		</p>
+
+		<p>
+			Shake Probability: <%= @catch_rate.GetShakeProbability(@catch_rate.GetModifiedCatchRate) %>
+		</p>
+
+		<p>
+			Crit Rate: <%= @catch_rate.GetCritRate(@catch_rate.GetModifiedCatchRate) %>
+		</p>
+
+		<p>
+			Crit Catch Chance(1): <%= @catch_rate.GetCritCatchChance %>
+		</p>
+
+		<p>
+			Catch Chance(4): <%= @catch_rate.GetCatchChance %>
+		</p>
+
+		<p>
+			You have a <%= @catch_rate.GetCritRate(@catch_rate.GetModifiedCatchRate) %>% chance to trigger a critical capture, which will have a <%= @catch_rate.GetCritCatchChance %>% chance of success. Failing that, you will have a <%= @catch_rate.GetCatchChance %>% chance of a successful capture.
 		</p>
 
 	</div>

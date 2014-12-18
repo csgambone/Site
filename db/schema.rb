@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141212030300) do
+ActiveRecord::Schema.define(version: 20141218024614) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -26,10 +26,16 @@ ActiveRecord::Schema.define(version: 20141212030300) do
     t.integer  "catchrate"
     t.integer  "currenthp"
     t.integer  "maxhp"
-    t.float    "status",     limit: 53
-    t.float    "ball",       limit: 53
-    t.float    "opower",     limit: 53
+    t.float    "status",         limit: 53
+    t.integer  "ball"
+    t.float    "opower",         limit: 53
     t.integer  "caught"
+    t.boolean  "repeat"
+    t.integer  "turn_number"
+    t.integer  "enemy_level"
+    t.boolean  "bug_water_type"
+    t.boolean  "dive_surf_fish"
+    t.boolean  "cave_night"
   end
 
   create_table "comments", force: true do |t|
