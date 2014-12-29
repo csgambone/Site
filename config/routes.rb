@@ -13,5 +13,5 @@ Rails.application.routes.draw do
 
   get '/multiplechoice' => 'pages#multiplechoice'
   
-  root 'welcome#index'
+  root 'welcome#index2'
 end

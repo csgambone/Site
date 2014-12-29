@@ -1,5 +1,25 @@
-<h1>New catch_rate</h1>
+<h1>Catch Rate Calculator</h1>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', catch_rates_path %>
+<div class="container">
+	<div class="three columns">
+		<div class="alpha brown">
+			<div class="menu_margin">
+				<h2>Menu</h2>
+				<hr>
+				· <%= link_to 'Blog', controller: 'articles' %><br>
+				· <%= link_to 'Multiple Choice Test Page', 'multiplechoice' %><br>
+				· <%= link_to 'Game Start Page', controller: 'games' %><br>
+				· <%= link_to 'Pokemon Quiz LITE', 'multiplechoice' %><br>
+				· <%= link_to 'Catch Rate Calculator', '/catch_rates/new' %><br>
+				· Menu Item 6<br>
+				· Menu Item 7<br>
+				· Menu Item 8<br>
+				<br>
+				· <%= link_to 'Home', root_path %>
+			</div>
+		</div>
+	</div>	
+	<div class="eight columns offset-by-one">
+		<%= render 'form' %>
+	</div>
+</div>

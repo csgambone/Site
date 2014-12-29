@@ -10,79 +10,76 @@
       </ul>
     </div>
   <% end %>
+  <div class="brown">
+    <div class="menu_margin">
+      <p>
+        <h5> Catch Rate </h5>
+        <%= f.number_field :catchrate, :size => 800 %>
+      </p>
 
-  <div class="container class">
-    <div class="eight columns offset-by-four">
-      <div class="brown">
-        <p>
-          <h5> Catch Rate </h5>
-          <%= f.number_field :catchrate, :size => 800 %>
-        </p>
+      <p>
+        <h5> Enemy Current HP </h5>
+        <%= f.number_field :currenthp, :size => 800 %>
+      </p>
 
-        <p>
-          <h5> Enemy Current HP </h5>
-          <%= f.number_field :currenthp, :size => 800 %>
-        </p>
+      <p>
+        <h5> Enemy Maximum HP </h5>
+        <%= f.number_field :maxhp, :size => 800 %>
+      </p>
 
-        <p>
-          <h5> Enemy Maximum HP </h5>
-          <%= f.number_field :maxhp, :size => 800 %>
-        </p>
+      <p>
+        <h5> Status </h5>
+        <%= f.select :status, [['None',1.0],['Sleep/Freeze',2.5],['Paralyze/Poison/Burn',1.5]] %>
+      </p>
 
-        <p>
-          <h5> Status </h5>
-          <%= f.select :status, [['None',1.0],['Sleep/Freeze',2.5],['Paralyze/Poison/Burn',1.5]] %>
-        </p>
+      <p>
+        <h5> Ball Type </h5>
+        <%= f.select :ball, [['Pokeball',1],['Great Ball',2],['Ultra Ball',3],['Master Ball',4],['Premier Ball',5],['Repeat Ball',6],['Timer Ball',7],['Nest Ball',8],['Net Ball',9],['Dive Ball',10],['Luxury Ball',11],['Heal Ball',12],['Quick Ball',13],['Dusk Ball',14]] %> 
+      </p>
 
-        <p>
-          <h5> Ball Type </h5>
-          <%= f.select :ball, [['Pokeball',1],['Great Ball',2],['Ultra Ball',3],['Master Ball',4],['Premier Ball',5],['Repeat Ball',6],['Timer Ball',7],['Nest Ball',8],['Net Ball',9],['Dive Ball',10],['Luxury Ball',11],['Heal Ball',12],['Quick Ball',13],['Dusk Ball',14]] %> 
-        </p>
+      <p>
+        <h5> O-Power: Capture </h5>
+        <%= f.select :opower, [['None',1.0],['Level 1',1.1],['Level 2',1.2],['Level 3',1.3]] %>
+      </p>
 
-        <p>
-          <h5> O-Power: Capture </h5>
-          <%= f.select :opower, [['None',1.0],['Level 1',1.1],['Level 2',1.2],['Level 3',1.3]] %>
-        </p>
+      <p>
+        <h5> Number of Pokemon caught in Pokedex </h5>
+        <%= f.number_field :caught, :size => 800 %>
+      </p>
 
-        <p>
-          <h5> Number of Pokemon caught in Pokedex </h5>
-          <%= f.number_field :caught, :size => 800 %>
-        </p>
+      <p>
+        <h5> Turn Number </h5>
+        <%= f.number_field :turn_number, :size => 800 %>
+      </p>
 
-        <p>
-          <h5> Turn Number </h5>
-          <%= f.number_field :turn_number, :size => 800 %>
-        </p>
+      <p>
+        <h5> Enemy's Level </h5>
+        <%= f.number_field :enemy_level, :size => 800 %>
+      </p>
 
-        <p>
-          <h5> Enemy's Level </h5>
-          <%= f.number_field :enemy_level, :size => 800 %>
-        </p>
+      <p>
+        <h5> Is Pokemon already caught in Pokedex? </h5>
+        <%= f.check_box :repeat %>
+      </p>
 
-        <p>
-          <h5> Is Pokemon already caught in Pokedex? </h5>
-          <%= f.check_box :repeat %>
-        </p>
+      <p>
+        <h5> Is enemy bug and/or water type? </h5>
+        <%= f.check_box :bug_water_type %>
+      </p>
 
-        <p>
-          <h5> Is enemy bug and/or water type? </h5>
-          <%= f.check_box :bug_water_type %>
-        </p>
+      <p>
+        <h5> Are you currently diving, surfing, or fishing? </h5>
+        <%= f.check_box :dive_surf_fish %>
+      </p>
 
-        <p>
-          <h5> Are you currently diving, surfing, or fishing? </h5>
-          <%= f.check_box :dive_surf_fish %>
-        </p>
+      <p>
+        <h5> Are you currently in a cave and/or it is night time? </h5>
+        <%= f.check_box :cave_night %>
+      </p>
 
-        <p>
-          <h5> Are you currently in a cave and/or it is night time? </h5>
-          <%= f.check_box :cave_night %>
-        </p>
-
-        <p>
-          <%= f.submit %>
-        </p>
-      </div>
+      <p>
+        <%= f.submit "Calculate" %>
+      </p>
     </div>
   </div>
 <% end %>

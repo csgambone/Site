@@ -20,9 +20,9 @@
 body {
 	  color:white;
 	  background-image:url('link.jpg');
-   	  background-size:cover;
-  	  background-repeat:no-repeat;
-  	  background-color:black;
+   	background-size:cover;
+  	background-repeat:no-repeat;
+  	background-color:black;
 }
 
 h1 {
@@ -47,32 +47,68 @@ h5 {
     color: #FFFFFF;
 }
 
+label {
+    float: left;
+    overflow: hidden;
+    margin-left: 1%;
+    width: 96%;
+}
+
+strong { 
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
 .center {
-	text-align: center;
+    text-align: center;
 }
 
 .right {
-  text-align: right;
+    text-align: right;
 }
 
 .brown {
-	background-color:rgba(105,81,27,0.7);
+    background-color:rgba(105,81,27,0.7);
 }
 
 .menu_margin {
-	margin-top: 10px;
-  margin-bottom: 10px;
-  margin-right: 10px;
-  margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .form_text {
-	width:100%;
+    width:100%;
 }
 
-label {
-  float: left;
-  overflow: hidden;
-  margin-left: 1%;
-  width: 96%;
+.result {
+    color:#00F014;
+}
+
+.double_font {
+    font-size:200%;
+}
+
+body#christmas {
+    color:white;
+    background-image:url('christmas_pika.jpg');
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-color:black;
+}
+
+h1#christmas {
+    color: #E0C3DF;
+    -webkit-text-stroke: 1px #C877D9;
+    text-align:center;
+    font-weight:bold;
+}
+
+h2#christmas {
+    color: #E0C3DF;
+}
+
+.christmas_color1 {
+    background-color:rgba(200,119,217,0.7);
 }

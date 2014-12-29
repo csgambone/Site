@@ -253,4 +253,15 @@ class CatchRate < ActiveRecord::Base
 		crit_catch_chance = Calculate(crit_shake_count)
 		return crit_catch_chance
 	end
+
+	def GetOverallCatchChance(modified_catch_rate)
+		crit_chance = GetCritRate(modified_catch_rate) / 100.0
+		crit_catch_chance = GetCritCatchChance() / 100.0
+		catch_chance = GetCatchChance() / 100.0
+
+		overall_catch_chance = (crit_chance * crit_catch_chance) + ((1 - crit_chance) * catch_chance)
+		overall_catch_chance = overall_catch_chance * 100
+
+		return overall_catch_chance
+	end
 end
