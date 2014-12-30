@@ -1,0 +1,82 @@
+<div class="container">
+	<h1>Pokemon Quiz LITE</h1>
+	<div class="ten columns offset-by-three menu_margin">
+		<div class="brown">
+			<div class="menu_margin">
+				<% @question = Question.offset(rand(Question.count)).first %>
+				<h2><%= @question.body %></h2>
+				<hr>
+				<div class="right">
+					<p>
+						Sources: 
+						<% @question.sources.each do |source| %>
+							<%= source.name %>
+						<% end %>
+					</p>
+				</div>
+				<div>
+					<%= radio_button_tag(:answer, "A") %><%= @question.option1 %><br />
+					
+					<%= radio_button_tag(:answer, "B") %><%= @question.option2 %><br />
+					
+					<%= radio_button_tag(:answer, "C") %><%= @question.option3 %><br />
+					
+					<%= radio_button_tag(:answer, "D") %><%= @question.option4 %><br />
+					
+					<%= radio_button_tag(:answer, "E") %><%= @question.option5 %>
+					<div style="clear: left;"></div>
+				</div>
+			</div>
+			<button id="toggle_button" onclick="change_text()">Check Answer!</button>
+			<style>.hidden-div{ display:none } </style>
+			<div class="hidden-div" id="hidden-div" style="font-size: 200%; color: blue">
+				<p><%= @question.answer %></br>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+function change_text() {
+    var button = document.getElementById('toggle_button');
+
+    if (button.innerHTML === "Check Answer!") {
+    	document.getElementById("answer_A").disabled = true;
+	    document.getElementById("answer_B").disabled = true;
+	    document.getElementById("answer_C").disabled = true;
+	    document.getElementById("answer_D").disabled = true;
+	    document.getElementById("answer_E").disabled = true;
+	    document.getElementById('hidden-div').style.display = 'block'
+        button.innerHTML = "Next Question!";
+        var right_answer = '<%= @question.answer %>';
+		var answer = document.querySelector('input[name = "answer"]:checked').value;
+		if (answer === right_answer) {
+			document.getElementById('hidden-div').style.color = 'red'
+		}
+    }
+    else {
+
+    }
+}
+
+function right_answer() {
+	var right_answer = '<%= @question.answer %>';
+	var answer = document.querySelector('input[name = "answer"]:checked').value;
+	if (answer === right_answer) {
+		return "correct";
+	}
+	else {
+		return "incorrect";
+	}
+}
+
+function getCheckedRadio(radio_group) {
+    for (var i = 0; i < radio_group.length; i++) {
+        var button = radio_group[i];
+        if (button.checked) {
+            return button.value;
+        }
+    }
+    return undefined;
+}
+</script>

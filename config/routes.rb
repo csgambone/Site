@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   resources :catch_rates
 
-  #get 'welcome/index'
-
   resources :articles do
     resources :comments
   end
@@ -12,6 +10,8 @@ Rails.application.routes.draw do
   resources :games
 
   get '/multiplechoice' => 'pages#multiplechoice'
-  
+  get '/quiz_lite' => 'pages#quiz_lite'
+  get '/questions/test_partial' => 'questions#test'
+
   root 'welcome#index2'
 end
