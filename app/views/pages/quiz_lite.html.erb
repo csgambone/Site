@@ -1,11 +1,35 @@
 <div class="container">
 	<h1>Pokemon Quiz LITE</h1>
-	<div class="ten columns offset-by-three menu_margin">
+	<div class="three columns">
+		<div class="alpha brown">
+			<div class="menu_margin">
+				<h2>Menu</h2>
+				<hr>
+				· <%= link_to 'Blog', controller: 'articles' %><br>
+				· <%= link_to 'Multiple Choice Test Page', '/multiplechoice' %><br>
+				· <%= link_to 'Game Start Page', controller: 'games' %><br>
+				· <%= link_to 'Pokemon Quiz LITE', '/quiz_lite' %><br>
+				· <%= link_to 'Catch Rate Calculator', '/catch_rates/new' %><br>
+				· Menu Item 6<br>
+				· Menu Item 7<br>
+				· Menu Item 8<br>
+				<br>
+				· <%= link_to 'Home', root_path %>
+			</div>
+		</div>
+	</div>
+	<div class="ten columns menu_margin">
 		<div class="brown">
 			<div class="menu_margin">
-				<% @question = Question.offset(rand(Question.count)).first %>
+				<% @question = Question.where(type_id: 1).offset(rand(Question.where(type_id: 1).count)).first %>
 				<h2><%= @question.body %></h2>
 				<hr>
+				<div class="five columns">
+					<p>
+						Question ID: 
+						<%= @question.id %>
+					</p>
+				</div>
 				<div class="right">
 					<p>
 						Sources: 
@@ -27,10 +51,22 @@
 					<div style="clear: left;"></div>
 				</div>
 			</div>
-			<button id="toggle_button" onclick="change_text()">Check Answer!</button>
-			<style>.hidden-div{ display:none } </style>
-			<div class="hidden-div" id="hidden-div" style="font-size: 200%; color: blue">
-				<p><%= @question.answer %></br>
+			<style>.answer_button{ display:block } </style>
+			<div class="answer_button menu_margin center" id="answer_button">
+				<button id="toggle_button" onclick="change_text()">Check Answer!</button>
+			</div>
+			<style>.answer{ display:none } </style>
+			<div class="answer menu_margin center" id="answer" style="color: red">
+				<%= link_to "Next Question!", '/quiz_lite', class: 'button' %>
+				<p style="font-size: 200%">The correct answer is: <%= @question.answer %></p>
+
+				<div class="correct" id="correct" style="display: none">
+					<p style="font-size: 200%">CONGRATULATIONS! YOU ARE RIGHT!</p>
+				</div>
+				<div class="incorrect" id="incorrect" style="display: none">
+					<p style="font-size: 200%">SORRY! YOU ARE WRONG!</p>
+				</div>
+				</br>
 			</div>
 		</div>
 	</div>
@@ -40,43 +76,24 @@
 function change_text() {
     var button = document.getElementById('toggle_button');
 
-    if (button.innerHTML === "Check Answer!") {
-    	document.getElementById("answer_A").disabled = true;
-	    document.getElementById("answer_B").disabled = true;
-	    document.getElementById("answer_C").disabled = true;
-	    document.getElementById("answer_D").disabled = true;
-	    document.getElementById("answer_E").disabled = true;
-	    document.getElementById('hidden-div').style.display = 'block'
-        button.innerHTML = "Next Question!";
-        var right_answer = '<%= @question.answer %>';
-		var answer = document.querySelector('input[name = "answer"]:checked').value;
-		if (answer === right_answer) {
-			document.getElementById('hidden-div').style.color = 'red'
-		}
-    }
-    else {
-
-    }
-}
-
-function right_answer() {
-	var right_answer = '<%= @question.answer %>';
-	var answer = document.querySelector('input[name = "answer"]:checked').value;
+	document.getElementById("answer_A").disabled = true;
+    document.getElementById("answer_B").disabled = true;
+    document.getElementById("answer_C").disabled = true;
+    document.getElementById("answer_D").disabled = true;
+    document.getElementById("answer_E").disabled = true;
+    document.getElementById('answer_button').style.display = 'none'
+    document.getElementById('answer').style.display = 'block'
+    var right_answer = '<%= @question.answer %>';
+	var answer = document.querySelector('input[name = "answer"]:checked');
+	if (answer) {
+		answer = answer.value
+	}
 	if (answer === right_answer) {
-		return "correct";
+		document.getElementById('answer').style.color = '#00FF00'
+		document.getElementById('correct').style.display = 'block'
 	}
 	else {
-		return "incorrect";
+		document.getElementById('incorrect').style.display = 'block'
 	}
-}
-
-function getCheckedRadio(radio_group) {
-    for (var i = 0; i < radio_group.length; i++) {
-        var button = radio_group[i];
-        if (button.checked) {
-            return button.value;
-        }
-    }
-    return undefined;
 }
 </script>

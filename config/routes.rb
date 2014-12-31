@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   get '/multiplechoice' => 'pages#multiplechoice'
   get '/quiz_lite' => 'pages#quiz_lite'
+  get '/christmas' => 'pages#christmas'
   get '/questions/test_partial' => 'questions#test'
 
   root 'welcome#index2'
