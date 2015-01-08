@@ -19,3 +19,6 @@
 
 # Ignore database dump
 /db/data.yml
+
+# Ignore pic
+/app/assets/images/IMG_20141206_180527.jpg
