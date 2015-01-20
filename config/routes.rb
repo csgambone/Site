@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :catch_rates
 
+  resources :dbless_catch_rates
+
   resources :articles do
     resources :comments
   end
@@ -14,5 +16,5 @@ Rails.application.routes.draw do
   get '/christmas' => 'pages#christmas'
   get '/questions/test_partial' => 'questions#test'
 
-  root 'welcome#index2'
+  root 'welcome#index'
 end

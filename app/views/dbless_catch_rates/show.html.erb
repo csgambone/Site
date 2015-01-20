@@ -1,0 +1,117 @@
+<h1>Results</h1>
+
+<div class="container">
+	<div class="three columns">
+		<div class="alpha brown">
+			<div class="menu_margin">
+				<h2>Menu</h2>
+				<hr>
+				· <%= link_to 'Blog', controller: 'articles' %><br>
+				· <%= link_to 'Multiple Choice Test Page', '/multiplechoice' %><br>
+				· <%= link_to 'Game Start Page', controller: 'games' %><br>
+				· <%= link_to 'Pokemon Quiz LITE', '/quiz_lite' %><br>
+				· <%= link_to 'Catch Rate Calculator', '/catch_rates/new' %><br>
+				· Menu Item 6<br>
+				· Menu Item 7<br>
+				· Menu Item 8<br>
+				<br>
+				· <%= link_to 'Home', root_path %>
+			</div>
+		</div>
+	</div>	
+	<div class="eight columns offset-by-one">
+		<div class="alpha brown">
+			<div class="menu_margin">
+				<div class="center">
+					<h5>DBless Catch Rate Results:</h5>
+				</div>
+				<hr>
+				<p>
+					<strong>Catch Rate:</strong> <span class="result"><%= @dbless_catch_rate.catchrate %></span>
+				</p>
+
+				<p>
+					<strong>Current HP:</strong> <span class="result"><%= @dbless_catch_rate.currenthp %></span>
+				</p>
+
+				<p>
+					<strong>Maximum HP:</strong> <span class="result"><%= @dbless_catch_rate.maxhp %></span>
+				</p>
+
+				<p>
+					<strong>Status:</strong> <span class="result"><%= @dbless_catch_rate.GetStatusName(@dbless_catch_rate.status) %></span>
+				</p>
+
+				<p>
+					<strong>Ball:</strong> <span class="result"><%= @dbless_catch_rate.GetBallName(@dbless_catch_rate.ball) %></span>
+				</p>
+
+				<p>
+					<strong>O-Power Multiplier:</strong> <span class="result"><%= @dbless_catch_rate.GetOPowerName(@dbless_catch_rate.opower) %></span>
+				</p>
+
+				<p>
+					<strong>Number of Pokemon caught in Pokedex:</strong> <span class="result"><%= @dbless_catch_rate.caught %></span>
+				</p>
+
+				<p>
+					<strong>Turn Number:</strong> <span class="result"><%= @dbless_catch_rate.turn_number %></span>
+				</p>
+
+				<p>
+					<strong>Enemy Level:</strong> <span class="result"><%= @dbless_catch_rate.enemy_level %></span>
+				</p>
+
+				<p>
+					<strong>Is already caught in Pokedex:</strong> <span class="result"><%= @dbless_catch_rate.repeat %></span>
+				</p>
+
+				<p>
+					<strong>Is bug and/or water type:</strong> <span class="result"><%= @dbless_catch_rate.bug_water_type %></span>
+				</p>
+
+				<p>
+					<strong>Currently diving, surfing, or fishing:</strong> <span class="result"><%= @dbless_catch_rate.dive_surf_fish %></span>
+				</p>
+
+				<p>
+					<strong>Currently in a cave and/or night time:</strong> <span class="result"><%= @dbless_catch_rate.cave_night %></span>
+				</p>
+
+				<p>
+					<strong>Modified Catch Rate:</strong> <span class="result"><%= @dbless_catch_rate.GetModifiedCatchRate %></span>
+				</p>
+
+				<p>
+					<strong>Shake Probability:</strong> <span class="result"><%= @dbless_catch_rate.GetShakeProbability(@dbless_catch_rate.GetModifiedCatchRate) %></span>
+				</p>
+
+				<p>
+					<strong>Crit Rate:</strong> <span class="result"><%= @dbless_catch_rate.GetCritRate(@dbless_catch_rate.GetModifiedCatchRate) %>%</span>
+				</p>
+
+				<p>
+					<strong>Crit Catch Chance (1 shake check):</strong> <span class="result"><%= @dbless_catch_rate.GetCritCatchChance %>%</span>
+				</p>
+
+				<p>
+					<strong>Catch Chance (4 shake checks):</strong> <span class="result"><%= @dbless_catch_rate.GetCatchChance %>%</span>
+				</p>
+
+				<hr>
+
+				<p>
+					<font size="4">
+					· You have a <span class="result"><%= @dbless_catch_rate.GetCritRate(@dbless_catch_rate.GetModifiedCatchRate) %>%</span> chance to trigger a critical capture, which will have a <span class="result"><%= @dbless_catch_rate.GetCritCatchChance %>%</span> chance of success. 
+					<br>
+					· Failing that, you will have a <span class="result"><%= @dbless_catch_rate.GetCatchChance %>%</span> chance of a successful capture.
+					<br>
+					· Overall chance per ball is <span class="result"><%= @dbless_catch_rate.GetOverallCatchChance(@dbless_catch_rate.GetModifiedCatchRate) %>%</span>.
+					<br><br>
+					</font>
+				</p>
+
+			</div>
+		</div>
+	</div>
+</div>
